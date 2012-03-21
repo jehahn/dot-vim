@@ -20,9 +20,11 @@ if has("gui_macvim")
     " Increase the number of allowable tabs per window
     set tabpagemax=1000
 
-    " Command-][ to increase/decrease indentation
-    vmap <D-]> >gv
+    " Use TextMate style indent/dedent
+    nmap <D-[> <<
+    nmap <D-]> >>
     vmap <D-[> <gv
+    vmap <D-]> >gv
 
     " Map Command-# to switch tabs
     map  <D-0> 0gt

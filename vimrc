@@ -12,15 +12,15 @@ set number
 " Use UTF-8
 set encoding=utf-8
 
+" Show command in the status line
+set showcmd
+
 " Turn on 'hidden' to manage multiple buffers better.
 set hidden
 
 " Swap ' and `
 nnoremap ' `
 nnoremap ` '
-
-" More powerful % matching
-runtime macro/matchit.vim<
 
 " Set a longer command history
 set history=1000
@@ -60,6 +60,9 @@ set laststatus=2
 " Allow backspacing over anything in insert mode
 set backspace=indent,eol,start
 
+" Settings for ctrl-p module
+let g:ctrlp_working_path_mode = 2
+
 " Various file type detection clues
 " Real tabs for make
 au FileType make set noexpandtab
@@ -78,9 +81,6 @@ set modelines=10
 " Where to store swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Show command in the status line
-set showcmd
 
 " Sane Shift+Arrow behavior -- must be in vimrc, not gvimrc
 let macvim_hig_shift_movement = 1
