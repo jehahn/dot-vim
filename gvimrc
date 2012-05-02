@@ -21,9 +21,11 @@ if has("gui_macvim")
     set tabpagemax=1000
 
     " Use TextMate style indent/dedent
+    imap <D-[> <Esc><<
     nmap <D-[> <<
-    nmap <D-]> >>
     vmap <D-[> <gv
+    imap <D-]> <Esc>>>
+    nmap <D-]> >>
     vmap <D-]> >gv
 
     " Map Command-# to switch tabs
