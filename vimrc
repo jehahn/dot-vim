@@ -1,9 +1,6 @@
 " Let's not pretend to be vi compatible, OK?
 set nocompatible
 
-" Color scheme
-colorscheme oceanblack
-
 " Turn on syntax highlighting, the ruler and line numbering
 syntax on
 set ruler
@@ -43,6 +40,17 @@ set nolist
 " Turning this on will enable invisble characters, but it breaks linewrapping.
 "set list listchars=tab:▸\ ,eol:¬,trail:·
 
+" Highlight unused whitespace and tab characters
+highlight TabCharacters ctermbg=DarkGrey guibg=DarkGrey
+autocmd ColorScheme * highlight TabCharacters ctermbg=DarkGrey guibg=DarkGrey
+autocmd Syntax * syn match TabCharacters /\t\+/ containedin=ALL
+
+highlight TerminalWhiteSpace ctermbg=DarkBlue  guibg=DarkBlue
+autocmd ColorScheme * highlight TerminalWhiteSpace ctermbg=DarkBlue guibg=DarkBlue
+autocmd Syntax * syn match TerminalWhiteSpace /\s\+$/ containedin=ALL
+
+
+
 " Indentation controls
 set autoindent
 set smartindent
@@ -78,6 +86,9 @@ au FileType make set noexpandtab
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 " Treat JSON as JavaScript
 au BufRead,BufNewFile *json set ft=javascript
+
+" Color scheme
+colorscheme oceanblack
 
 " Load the plugin and indent settings for the detected filetype
 filetype plugin indent on
