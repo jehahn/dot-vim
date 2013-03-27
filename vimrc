@@ -49,7 +49,8 @@ highlight TerminalWhiteSpace ctermbg=DarkBlue  guibg=DarkBlue
 autocmd ColorScheme * highlight TerminalWhiteSpace ctermbg=DarkBlue guibg=DarkBlue
 autocmd Syntax * syn match TerminalWhiteSpace /\s\+$/ containedin=ALL
 
-
+" Make the selection not include the character under the cursor
+set selection=exclusive
 
 " Indentation controls
 set autoindent
