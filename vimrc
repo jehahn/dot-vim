@@ -29,13 +29,19 @@ set history=1000
 set scrolloff=5
 
 " Use 4 character wide tab stops, expand tabs by default.
+" Enable linebreak and word wrap. Note that this is incompatible
+" with showing "invisible" characters
 " Show invisibles, and set some characters to show for them.
 set nowrap
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set list listchars=tab:▸\ ,eol:¬,trail:·
+set wrap
+set linebreak
+set nolist
+" Turning this on will enable invisble characters, but it breaks linewrapping.
+"set list listchars=tab:▸\ ,eol:¬,trail:·
 
 " Indentation controls
 set autoindent
@@ -56,6 +62,8 @@ set visualbell
 
 " Always have a status bar
 set laststatus=2
+
+" Enable linewrapping
 
 " Allow backspacing over anything in insert mode
 set backspace=indent,eol,start
