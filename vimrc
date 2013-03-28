@@ -99,8 +99,8 @@ set modeline
 set modelines=10
 
 " Where to store swap files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
 
 " Sane Shift+Arrow behavior -- must be in vimrc, not gvimrc
 let macvim_hig_shift_movement = 1
